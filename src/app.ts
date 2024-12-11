@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import router from "./router";
+import routerAdmin from "./routerAdmin";
 
 /** 1-ENTRANCE **/
 const app = express();
@@ -15,5 +16,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 /** 4-ROUTERS **/
-app.use("/", router);
+
+app.use("/admin", routerAdmin); // SSR: EJS backendda frontendimizni tog`ridan to`gri qurib olish uchun
+app.use("/", router); //SPA : REACT  rest api server sifatida ishlatamiz
 export default app;
