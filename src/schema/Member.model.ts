@@ -19,7 +19,7 @@ const memberSchema = new Schema(
       required: true,
     },
     memberPhone: {
-      tyoe: String,
+      type: String,
       index: { unique: true, sparse: true },
       required: true,
     },
