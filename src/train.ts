@@ -1,11 +1,21 @@
+/*
+Porject standarts:
+--Login standarts
+--Naming standarts
+    function,method,variable ==>Camel goHome
+    class ==> Pascal                  MemberService
+    folder ==> Kebab
+    css ==> Snake
+*/
+
 //TASK-h2
 
-function getDigits(input: string): string {
-  let matches = input.match(/\d+/g);
-  return matches ? matches.join("") : "";
-}
+// function getDigits(input: string): string {
+//   let matches = input.match(/\d+/g);
+//   return matches ? matches.join("") : "";
+// }
 
-console.log(getDigits("mahkam123456topshiriqlar789kelgusi2024"));
+// console.log(getDigits("mahkam123456topshiriqlar789kelgusi2024"));
 
 //Task-H
 
