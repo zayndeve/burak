@@ -31,7 +31,7 @@ restaurantController.getSignup = (req: Request, res: Response) => {
 };
 restaurantController.processLogin = (req: Request, res: Response) => {
   try {
-    console.log("processLogin page");
+    console.log("processLogin");
     res.send("processLogin");
   } catch (err) {
     console.log("Error processLogin:", err);
@@ -40,7 +40,7 @@ restaurantController.processLogin = (req: Request, res: Response) => {
 
 restaurantController.processSignup = (req: Request, res: Response) => {
   try {
-    console.log("processSignup page");
+    console.log("processSignup");
     res.send("processSignup");
   } catch (err) {
     console.log("Error processSignup:", err);

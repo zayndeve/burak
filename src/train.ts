@@ -3,9 +3,10 @@ Porject standarts:
 --Login standarts
 --Naming standarts
     function,method,variable ==>Camel goHome
-    class ==> Pascal                  MemberService
-    folder ==> Kebab
-    css ==> Snake
+
+    class  ==> Pascal      ------>    MemberService
+    folder,file ==> Kebab
+    css    ==> Snake
 
 --Erro handlings 
    
