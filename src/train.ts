@@ -1,3 +1,25 @@
+// TASK I:
+function majorityElement(nums: number[]): number {
+  let counts: { [key: number]: number } = {};
+  for (let num of nums) {
+    counts[num] = (counts[num] || 0) + 1;
+  }
+
+  let max = 0;
+  let result = -1;
+
+  for (let num in counts) {
+    if (counts[num] > max) {
+      max = counts[num];
+      result = +num;
+    }
+  }
+
+  return result;
+}
+
+console.log(majorityElement([1, 2, 3, 3, 2, 4, 3, 3]));
+//!https://www.geeksforgeeks.org/javascript-program-to-find-the-most-frequent-element-in-an-array/
 /*
 Porject standarts:
 --Login standarts
