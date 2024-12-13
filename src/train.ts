@@ -6,6 +6,9 @@ Porject standarts:
     class ==> Pascal                  MemberService
     folder ==> Kebab
     css ==> Snake
+
+--Erro handlings 
+   
 */
 
 //TASK-h2
