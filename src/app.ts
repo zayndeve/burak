@@ -28,7 +28,6 @@ app.use(
       maxAge: 1000 * 3600 * 3, // 3 hours
     },
     store: store,
-
     resave: true,
     saveUninitialized: true,
   })
