@@ -1,3 +1,18 @@
+function getVowels(input: string): number {
+  let count = 0;
+  let str = input.toLowerCase().split("");
+  let vowels = ["a", "e", "i", "o", "u"];
+
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(getVowels("salom"));
+
+//!https://stackoverflow.com/questions/71300136/how-to-return-number-of-vowels-in-a-string-in-javascript
 /* Project Standards:
 - Logging standards
 - Naming standards:
