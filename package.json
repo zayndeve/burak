@@ -4,6 +4,7 @@
   "description": "This is burak project backend",
   "main": "src/server.ts",
   "scripts": {
+    "prestart": "kill -9 $(lsof -t -i:3003) 2>/dev/null || true",
     "start": "ts-node src/server.ts ",
     "start:dev": "nodemon  --exec ts-node src/server.ts ",
     "build": "tsc ",
