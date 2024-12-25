@@ -1,38 +1,34 @@
-function getVowels(input: string): number {
-  let count = 0;
-  let str = input.toLowerCase().split("");
-  let vowels = ["a", "e", "i", "o", "u"];
-
-  for (let i = 0; i < str.length; i++) {
-    if (vowels.includes(str[i])) {
-      count++;
-    }
-  }
-  return count;
-}
-console.log(getVowels("salom"));
-
-//!https://stackoverflow.com/questions/71300136/how-to-return-number-of-vowels-in-a-string-in-javascript
 /* Project Standards:
-- Logging standards
-- Naming standards:
-    function, method, variable => CAMEL
-    class => PASCAL
-    folder, file => KEBAB
-    css => SNAKE
-- Error handling
+   - Logging standards
+   - Naming standards:
+       function, method, variable => CAMEL
+       class                     => PASCAL
+       folder, file              => KEBAB
+       css                       => SNAKE
+   - Error handling
 */
 
-/*
-Traditional Api
-Rest Api
-GraphQL Api
-...
+/* Request type:
+   Traditional Api
+   Rest Api
+   GraphQL Api
+   ...
 */
 
-/*
-Traditional FD    => SSR   => EJS
-Modern FD         => SPA   => REACT
+/* Frontend developmen:
+   Traditional FD  =>  SSR  =>  EJS
+   Modern FD       =>  SPA  =>  REACT
+*/
+
+/* Cookies:
+   request join
+   self destroy
+*/
+
+/* Validation:
+   Frontend validation
+   Backend validation
+   Database validation
 */
 
 //TASK-h2
@@ -96,3 +92,18 @@ Modern FD         => SPA   => REACT
 // console.log(findLongestWord("Hech kimga bermaymiz seni O`zbekiston"));
 
 // //!https://www.freecodecamp.org/news/three-ways-to-find-the-longest-word-in-a-string-in-javascript-a2fb04c9757c/
+// function getVowels(input: string): number {
+//   let count = 0;
+//   let str = input.toLowerCase().split("");
+//   let vowels = ["a", "e", "i", "o", "u"];
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (vowels.includes(str[i])) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(getVowels("salom"));
+
+// //!https://stackoverflow.com/questions/71300136/how-to-return-number-of-vowels-in-a-string-in-javascript
