@@ -1,37 +1,9 @@
-/* Project Standards:
-   - Logging standards
-   - Naming standards:
-       function, method, variable => CAMEL
-       class                     => PASCAL
-       folder, file              => KEBAB
-       css                       => SNAKE
-   - Error handling
-*/
-
-/* Request type:
-   Traditional Api
-   Rest Api
-   GraphQL Api
-   ...
-*/
-
-/* Frontend developmen:
-   Traditional FD  =>  SSR  =>  EJS
-   Modern FD       =>  SPA  =>  REACT
-*/
-
-/* Cookies:
-   request join
-   self destroy
-*/
-
-/* Validation:
-   Frontend validation
-   Backend validation
-   Database validation
-*/
-
-//TASK-h2
+// Task_L:
+function reverseString(str: string): string {
+  return str.split("").reverse().join("");
+}
+console.log(reverseString("A lazy life is a slow death"));
+//Task_H2
 
 // function getDigits(input: string): string {
 //   let matches = input.match(/\d+/g);
@@ -107,3 +79,35 @@
 // console.log(getVowels("salom"));
 
 // //!https://stackoverflow.com/questions/71300136/how-to-return-number-of-vowels-in-a-string-in-javascript
+/* Project Standards:
+   - Logging standards
+   - Naming standards:
+       function, method, variable => CAMEL
+       class                     => PASCAL
+       folder, file              => KEBAB
+       css                       => SNAKE
+   - Error handling
+*/
+
+/* Request type:
+   Traditional Api
+   Rest Api
+   GraphQL Api
+   ...
+*/
+
+/* Frontend developmen:
+   Traditional FD  =>  SSR  =>  EJS
+   Modern FD       =>  SPA  =>  REACT
+*/
+
+/* Cookies:
+   request join
+   self destroy
+*/
+
+/* Validation:
+   Frontend validation
+   Backend validation
+   Database validation
+*/
