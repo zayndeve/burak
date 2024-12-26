@@ -3,7 +3,7 @@ import { T } from "../libs/types/common";
 import MemberService from "../models/Memeber.service";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
-import Errors, { Message } from "../libs/types/Errors";
+import Errors, { HttpCode, Message } from "../libs/types/Errors";
 //import MemberService from "src/models/Memeber.service";
 
 const memberService = new MemberService();
@@ -47,14 +47,17 @@ restaurantController.processSignup = async (
 ) => {
   try {
     console.log("processSignup");
-
+    const file = req.file;
+    if (!file)
+      throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
     const newMember: MemberInput = req.body;
+    newMember.memberImage = file?.path;
     newMember.memberType = MemberType.RESTAURANT;
     const result = await memberService.processSignup(newMember);
-    //TODO Sesssions
+
     req.session.member = result;
     req.session.save(function () {
-      res.send(result);
+      res.redirect("/admin/product/all");
     });
   } catch (err) {
     console.log("Error, processSignup:", err);
@@ -75,17 +78,16 @@ restaurantController.processLogin = async (
 
     const input: LoginInput = req.body;
     const result = await memberService.processLogin(input);
-    //TODO Sesssions
     req.session.member = result;
     req.session.save(function () {
-      res.send(result);
+      res.redirect("/admin/product/all");
     });
   } catch (err) {
     console.log("Error, processLogin:", err);
     const message =
       err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
     res.send(
-      `<script>alert("${message}"); window,location.replace('admin/login)</script>`
+      `<script>alert("${message}"); window.location.replace('admin/login)</script>`
     );
   }
 };

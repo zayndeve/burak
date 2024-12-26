@@ -9,7 +9,7 @@ const productController: T = {};
 productController.getAllProducts = async (req: AdminRequest, res: Response) => {
   try {
     console.log("getAllProducts");
-    console.log("req.memeber", req.member);
+    // console.log("req.memeber", req.member);
     res.render("products");
   } catch (err) {
     console.log("Error, getAllProducts:", err);
