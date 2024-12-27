@@ -1,8 +1,18 @@
-// Task_L:
-function reverseString(str: string): string {
-  return str.split("").reverse().join("");
+// Task_M:
+function getSquareNumbers(
+  nums: number[]
+): { number: number; square: number }[] {
+  return nums.map((num) => ({
+    number: num,
+    square: Math.pow(num, 2),
+  }));
 }
-console.log(reverseString("A lazy life is a slow death"));
+console.log(getSquareNumbers([1, 2, 3]));
+// Task_L:
+// function reverseString(str: string): string {
+//   return str.split("").reverse().join("");
+// }
+// console.log(reverseString("A lazy life is a slow death"));
 //Task_H2
 
 // function getDigits(input: string): string {
