@@ -36,9 +36,20 @@ const productSchema = new Schema(
       default: ProductSize.NORMAL,
     },
     productVolume: {
-      type: String,
+      type: Number,
       enum: ProductVolume,
       default: ProductVolume.ONE,
+    },
+    productDesc: {
+      type: String,
+    },
+    productImages: {
+      type: [String],
+      default: [],
+    },
+    productViews: {
+      type: Number,
+      default: 0,
     },
   },
   { timestamps: true } // updatedAt, createdAt
@@ -48,4 +59,4 @@ productSchema.index(
   { unique: true }
 );
 
-export default mongoose.model("Porduct", productSchema);
+export default mongoose.model("Product", productSchema);
