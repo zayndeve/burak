@@ -1,13 +1,29 @@
-// Task_M:
-function getSquareNumbers(
-  nums: number[]
-): { number: number; square: number }[] {
-  return nums.map((num) => ({
-    number: num,
-    square: Math.pow(num, 2),
-  }));
+// !TASK_N
+function getPalindromeCheck(inputString: string): string {
+  let reverseString = "";
+  const stringLength = inputString.length;
+
+  for (let i = stringLength - 1; i >= 0; --i) {
+    reverseString += inputString.charAt(i);
+  }
+
+  if (reverseString === inputString) {
+    return `This word "${reverseString}" is palindrome`;
+  } else {
+    return "The string is not a palindrome.";
+  }
 }
-console.log(getSquareNumbers([1, 2, 3]));
+console.log(getPalindromeCheck("qovoq"));
+// Task_M:
+// function getSquareNumbers(
+//   nums: number[]
+// ): { number: number; square: number }[] {
+//   return nums.map((num) => ({
+//     number: num,
+//     square: Math.pow(num, 2),
+//   }));
+// }
+// console.log(getSquareNumbers([1, 2, 3]));
 // Task_L:
 // function reverseString(str: string): string {
 //   return str.split("").reverse().join("");
