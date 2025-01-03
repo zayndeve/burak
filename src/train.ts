@@ -1,19 +1,34 @@
-// !TASK_N
-function getPalindromeCheck(inputString: string): string {
-  let reverseString = "";
-  const stringLength = inputString.length;
+//TASK_O
 
-  for (let i = stringLength - 1; i >= 0; --i) {
-    reverseString += inputString.charAt(i);
+function calculateSumofArrays(inputArray: any[]): number {
+  let sum = 0;
+  for (let i = 0; i < inputArray.length; i++) {
+    const element = inputArray[i];
+    if (typeof element === "number") {
+      sum += element;
+    }
   }
-
-  if (reverseString === inputString) {
-    return `This word "${reverseString}" is palindrome`;
-  } else {
-    return "The string is not a palindrome.";
-  }
+  return sum;
 }
-console.log(getPalindromeCheck("qovoq"));
+console.log(calculateSumofArrays([45, "10", { son: 10 }, true, 35]));
+//!Ayni shu sabab typeof element === "number" bizga fazqat yig`indi qabul qilmoqda
+
+// // !TASK_N
+// function getPalindromeCheck(inputString: string): string {
+//   let reverseString = "";
+//   const stringLength = inputString.length;
+
+//   for (let i = stringLength - 1; i >= 0; --i) {
+//     reverseString += inputString.charAt(i);
+//   }
+
+//   if (reverseString === inputString) {
+//     return `This word "${reverseString}" is palindrome`;
+//   } else {
+//     return "The string is not a palindrome.";
+//   }
+// }
+// console.log(getPalindromeCheck("qovoq"));
 // Task_M:
 // function getSquareNumbers(
 //   nums: number[]
