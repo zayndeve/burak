@@ -1,17 +1,28 @@
-//TASK_O
-
-function calculateSumofArrays(inputArray: any[]): number {
-  let sum = 0;
-  for (let i = 0; i < inputArray.length; i++) {
-    const element = inputArray[i];
-    if (typeof element === "number") {
-      sum += element;
+function objectToArray(inputObject: { [key: string]: any }): [string, any][] {
+  const result: [string, any][] = [];
+  for (const key in inputObject) {
+    if (inputObject.hasOwnProperty(key)) {
+      result.push([key, inputObject[key]]);
     }
   }
-  return sum;
+  return result;
 }
-console.log(calculateSumofArrays([45, "10", { son: 10 }, true, 35]));
-//!Ayni shu sabab typeof element === "number" bizga fazqat yig`indi qabul qilmoqda
+
+console.log(objectToArray({ a: 10, b: 20 }));
+//TASK_O
+
+// function calculateSumofArrays(inputArray: any[]): number {
+//   let sum = 0;
+//   for (let i = 0; i < inputArray.length; i++) {
+//     const element = inputArray[i];
+//     if (typeof element === "number") {
+//       sum += element;
+//     }
+//   }
+//   return sum;
+// }
+// console.log(calculateSumofArrays([45, "10", { son: 10 }, true, 35]));
+// //!Ayni shu sabab typeof element === "number" bizga fazqat yig`indi qabul qilmoqda
 
 // // !TASK_N
 // function getPalindromeCheck(inputString: string): string {
