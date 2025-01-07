@@ -1,14 +1,26 @@
-function objectToArray(inputObject: { [key: string]: any }): [string, any][] {
-  const result: [string, any][] = [];
-  for (const key in inputObject) {
-    if (inputObject.hasOwnProperty(key)) {
-      result.push([key, inputObject[key]]);
-    }
-  }
-  return result;
+//TASK Q:
+
+function hasProperty(obj: { [key: string]: any }, key: string): boolean {
+  return key in obj;
 }
 
-console.log(objectToArray({ a: 10, b: 20 }));
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
+console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));
+console.log(hasProperty({ name: "BMW", model: "M3" }, "Yofproduction"));
+console.log(hasProperty({ name: "BMW", model: "M3" }, "name"));
+
+//!?https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
+// function objectToArray(inputObject: { [key: string]: any }): [string, any][] {
+//   const result: [string, any][] = [];
+//   for (const key in inputObject) {
+//     if (inputObject.hasOwnProperty(key)) {
+//       result.push([key, inputObject[key]]);
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(objectToArray({ a: 10, b: 20 }));
 //TASK_O
 
 // function calculateSumofArrays(inputArray: any[]): number {
