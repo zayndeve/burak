@@ -1,13 +1,40 @@
-//TASK Q:
-
-function hasProperty(obj: { [key: string]: any }, key: string): boolean {
-  return key in obj;
+//TASK_R
+function calculate(input: string): number {
+  const parts = input.split(" ");
+  const num1 = Number(parts[0]),
+    num2 = Number(parts[2]);
+  let result: number;
+  switch (parts[1]) {
+    case "+":
+      result = num1 + num2;
+      break;
+    case "-":
+      result = num1 - num2;
+      break;
+    case "*":
+      result = num1 * num2;
+      break;
+    case "/":
+      result = num1 / num2;
+      break;
+    default:
+      throw new Error("Noto'g'ri operator!");
+  }
+  return result;
 }
+console.log(calculate("1 + 3"));
+console.log(calculate("3 - 4"));
+console.log(calculate("5 * 7"));
+//TASK_Q:
 
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
-console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));
-console.log(hasProperty({ name: "BMW", model: "M3" }, "Yofproduction"));
-console.log(hasProperty({ name: "BMW", model: "M3" }, "name"));
+// function hasProperty(obj: { [key: string]: any }, key: string): boolean {
+//   return key in obj;
+// }
+
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "Yofproduction"));
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "name"));
 
 //!?https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
 // function objectToArray(inputObject: { [key: string]: any }): [string, any][] {
