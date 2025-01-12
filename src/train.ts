@@ -1,30 +1,46 @@
-//TASK_R
-function calculate(input: string): number {
-  const parts = input.split(" ");
-  const num1 = Number(parts[0]),
-    num2 = Number(parts[2]);
-  let result: number;
-  switch (parts[1]) {
-    case "+":
-      result = num1 + num2;
-      break;
-    case "-":
-      result = num1 - num2;
-      break;
-    case "*":
-      result = num1 * num2;
-      break;
-    case "/":
-      result = num1 / num2;
-      break;
-    default:
-      throw new Error("Noto'g'ri operator!");
+//TASK-S
+
+function missingNumber(nums: number[]): number {
+  const numSet = new Set(nums);
+  for (let i = 0; i <= nums.length; i++) {
+    if (!numSet.has(i)) {
+      return i;
+    }
   }
-  return result;
+  return -1;
 }
-console.log(calculate("1 + 3"));
-console.log(calculate("3 - 4"));
-console.log(calculate("5 * 7"));
+
+console.log(missingNumber([0, 1, 2, 3, 5, 6, 7, 8, 9]));
+console.log(missingNumber([0, 1]));
+
+//! BU safar vazifalar ko`pligi va yalqovligimdan gptdan ma`lum darajada foydalandim uzur!
+//TASK_R
+// function calculate(input: string): number {
+//   const parts = input.split(" ");
+//   const num1 = Number(parts[0]),
+//     num2 = Number(parts[2]);
+//   let result: number;
+//   switch (parts[1]) {
+//     case "+":
+//       result = num1 + num2;
+//       break;
+//     case "-":
+//       result = num1 - num2;
+//       break;
+//     case "*":
+//       result = num1 * num2;
+//       break;
+//     case "/":
+//       result = num1 / num2;
+//       break;
+//     default:
+//       throw new Error("Noto'g'ri operator!");
+//   }
+//   return result;
+// }
+// console.log(calculate("1 + 3"));
+// console.log(calculate("3 - 4"));
+// console.log(calculate("5 * 7"));
 //TASK_Q:
 
 // function hasProperty(obj: { [key: string]: any }, key: string): boolean {
