@@ -1,17 +1,24 @@
+/* Task_t */
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  return [...arr1, ...arr2].sort((a, b) => a - b);
+}
+console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+
+//?https://www.geeksforgeeks.org/merge-two-sorted-arrays/
 //TASK-S
 
-function missingNumber(nums: number[]): number {
-  const numSet = new Set(nums);
-  for (let i = 0; i <= nums.length; i++) {
-    if (!numSet.has(i)) {
-      return i;
-    }
-  }
-  return -1;
-}
+// function missingNumber(nums: number[]): number {
+//   const numSet = new Set(nums);
+//   for (let i = 0; i <= nums.length; i++) {
+//     if (!numSet.has(i)) {
+//       return i;
+//     }
+//   }
+//   return -1;
+// }
 
-console.log(missingNumber([0, 1, 2, 3, 5, 6, 7, 8, 9]));
-console.log(missingNumber([0, 1]));
+// console.log(missingNumber([0, 1, 2, 3, 5, 6, 7, 8, 9]));
+// console.log(missingNumber([0, 1]));
 
 //! BU safar vazifalar ko`pligi va yalqovligimdan gptdan ma`lum darajada foydalandim uzur!
 //TASK_R
