@@ -1,8 +1,19 @@
-/* Task_t */
-function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
-  return [...arr1, ...arr2].sort((a, b) => a - b);
+function sumOdds(number: number): number {
+  let count = 0;
+  for (let i = 0; i < number; i++) {
+    if (i % 2 !== 0) {
+      count++;
+    }
+  }
+  return count;
 }
-console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+console.log(sumOdds(9));
+
+/* Task_t */
+// function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+//   return [...arr1, ...arr2].sort((a, b) => a - b);
+// }
+// console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
 
 //?https://www.geeksforgeeks.org/merge-two-sorted-arrays/
 //TASK-S
