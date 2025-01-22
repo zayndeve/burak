@@ -1,13 +1,31 @@
-function sumOdds(number: number): number {
-  let count = 0;
-  for (let i = 0; i < number; i++) {
-    if (i % 2 !== 0) {
-      count++;
+//TASK_V
+function countChars(input: string): { [key: string]: number } {
+  const result: { [key: string]: number } = {};
+
+  for (const char of input) {
+    if (result[char]) {
+      result[char]++;
+    } else {
+      result[char] = 1;
     }
   }
-  return count;
+
+  return result;
 }
-console.log(sumOdds(9));
+const input = "Ziynatilloh";
+const output = countChars(input);
+console.log(output);
+
+// function sumOdds(number: number): number {
+//   let count = 0;
+//   for (let i = 0; i < number; i++) {
+//     if (i % 2 !== 0) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(sumOdds(9));
 
 /* Task_t */
 // function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
