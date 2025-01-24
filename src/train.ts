@@ -1,20 +1,34 @@
-//TASK_V
-function countChars(input: string): { [key: string]: number } {
-  const result: { [key: string]: number } = {};
+function chunkArray<T>(array: T[], size: number): T[][] {
+  const result: T[][] = [];
+  let i = 0;
 
-  for (const char of input) {
-    if (result[char]) {
-      result[char]++;
-    } else {
-      result[char] = 1;
-    }
+  while (i < array.length) {
+    result.push(array.slice(i, i + size));
+    i += size;
   }
 
   return result;
 }
-const input = "Ziynatilloh";
-const output = countChars(input);
-console.log(output);
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const chunked = chunkArray(array, 3);
+console.log(chunked);
+//TASK_V
+// function countChars(input: string): { [key: string]: number } {
+//   const result: { [key: string]: number } = {};
+
+//   for (const char of input) {
+//     if (result[char]) {
+//       result[char]++;
+//     } else {
+//       result[char] = 1;
+//     }
+//   }
+
+//   return result;
+// }
+// const input = "Ziynatilloh";
+// const output = countChars(input);
+// console.log(output);
 
 // function sumOdds(number: number): number {
 //   let count = 0;
