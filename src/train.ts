@@ -1,17 +1,44 @@
-function chunkArray<T>(array: T[], size: number): T[][] {
-  const result: T[][] = [];
-  let i = 0;
+function countOccurrences(obj: any, key: string): number {
+  let count = 0;
 
-  while (i < array.length) {
-    result.push(array.slice(i, i + size));
-    i += size;
+  function recursiveCount(currentObj: any) {
+    if (typeof currentObj === "object" && currentObj !== null) {
+      for (const k in currentObj) {
+        if (k === key) count++;
+        recursiveCount(currentObj[k]);
+      }
+    }
   }
 
-  return result;
+  recursiveCount(obj);
+  return count;
 }
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const chunked = chunkArray(array, 3);
-console.log(chunked);
+
+const data = {
+  model: "Bugatti",
+  size: 300,
+  steer: {
+    size: 300,
+  },
+};
+
+console.log(countOccurrences(data, "size"));
+
+// function chunkArray<T>(array: T[], size: number): T[][] {
+
+//   const result: T[][] = [];
+//   let i = 0;
+
+//   while (i < array.length) {
+//     result.push(array.slice(i, i + size));
+//     i += size;
+//   }
+
+//   return result;
+// }
+// const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const chunked = chunkArray(array, 3);
+// console.log(chunked);
 //TASK_V
 // function countChars(input: string): { [key: string]: number } {
 //   const result: { [key: string]: number } = {};
