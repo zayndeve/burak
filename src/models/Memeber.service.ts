@@ -25,7 +25,6 @@ class MemberService {
 
     return result;
   }
-
   public async signup(input: MemberInput): Promise<Member> {
     const salt = await bcrypt.genSalt();
     input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
@@ -39,7 +38,6 @@ class MemberService {
       throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHONE);
     }
   }
-
   public async login(input: LoginInput): Promise<Member> {
     const member = await this.memberModel
       .findOne(
