@@ -1,28 +1,34 @@
-function countOccurrences(obj: any, key: string): number {
-  let count = 0;
-
-  function recursiveCount(currentObj: any) {
-    if (typeof currentObj === "object" && currentObj !== null) {
-      for (const k in currentObj) {
-        if (k === key) count++;
-        recursiveCount(currentObj[k]);
-      }
-    }
-  }
-
-  recursiveCount(obj);
-  return count;
+/* Task_Y */
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  return arr1.filter((value) => arr2.includes(value));
 }
+const result = findIntersection([1, 2, 3], [3, 2, 0]);
+console.log(result);
+// function countOccurrences(obj: any, key: string): number {
+//   let count = 0;
 
-const data = {
-  model: "Bugatti",
-  size: 300,
-  steer: {
-    size: 300,
-  },
-};
+//   function recursiveCount(currentObj: any) {
+//     if (typeof currentObj === "object" && currentObj !== null) {
+//       for (const k in currentObj) {
+//         if (k === key) count++;
+//         recursiveCount(currentObj[k]);
+//       }
+//     }
+//   }
 
-console.log(countOccurrences(data, "size"));
+//   recursiveCount(obj);
+//   return count;
+// }
+
+// const data = {
+//   model: "Bugatti",
+//   size: 300,
+//   steer: {
+//     size: 300,
+//   },
+// };
+
+// console.log(countOccurrences(data, "size"));
 
 // function chunkArray<T>(array: T[], size: number): T[][] {
 
