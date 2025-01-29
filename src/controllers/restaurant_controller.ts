@@ -3,7 +3,7 @@ import { T } from "../libs/types/common";
 import MemberService from "../models/Memeber.service";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
-import Errors, { HttpCode, Message } from "../libs/types/Errors";
+import Errors, { HttpCode, Message } from "../libs/Errors";
 //import MemberService from "src/models/Memeber.service";
 
 const memberService = new MemberService();

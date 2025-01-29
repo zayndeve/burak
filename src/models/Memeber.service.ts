@@ -5,10 +5,10 @@ import {
   MemberInput,
   MemberUpdateInput,
 } from "../libs/types/member";
-import Errors, { HttpCode, Message } from "../libs/types/Errors";
+import Errors, { HttpCode, Message } from "../libs/Errors";
 import { MemberStatus, MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
-import { shapeIntoMongooseObjectId } from "../libs/types/config";
+import { shapeIntoMongooseObjectId } from "../libs/config";
 
 class MemberService {
   private readonly memberModel;

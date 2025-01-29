@@ -1,4 +1,4 @@
-import { AUTH_TIMER } from "./../libs/types/config";
+import { AUTH_TIMER } from "../libs/config";
 import { NextFunction, Request, Response } from "express";
 import { T } from "../libs/types/common";
 import MemberService from "../models/Memeber.service";
@@ -9,7 +9,7 @@ import {
   MemberInput,
   MemberUpdateInput,
 } from "../libs/types/member";
-import Errors, { HttpCode, Message } from "../libs/types/Errors";
+import Errors, { HttpCode, Message } from "../libs/Errors";
 import AuthService from "../models/Auth.service";
 
 const memberService = new MemberService();
