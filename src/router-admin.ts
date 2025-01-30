@@ -1,7 +1,7 @@
 import express from "express";
 const routerAdmin = express.Router();
-import restaurantController from "./controllers/restaurant_controller";
-import productController from "./controllers/product_controller";
+import restaurantController from "./controllers/restaurant.controller";
+import productController from "./controllers/product.controller";
 import makeUploader from "./libs/utils/uploader";
 /* Restraunt */
 routerAdmin.get("/", restaurantController.goHome);

@@ -1,4 +1,4 @@
-import { ExtendedRequest } from "./../libs/types/member";
+import { ExtendedRequest } from "../libs/types/member";
 import { Request, Response } from "express";
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import { T } from "../libs/types/common";
