@@ -1,9 +1,17 @@
-/* Task_Y */
-function findIntersection(arr1: number[], arr2: number[]): number[] {
-  return arr1.filter((value) => arr2.includes(value));
+/!Task_T/;
+function sumEvens(numbers: number[]): number {
+  return numbers
+    .filter((num) => num % 2 === 0)
+    .reduce((sum, num) => sum + num, 0);
 }
-const result = findIntersection([1, 2, 3], [3, 2, 0]);
-console.log(result);
+console.log(sumEvens([4, 4]));
+console.log(sumEvens([1, 2, 3, 2]));
+/* Task_Y */
+// function findIntersection(arr1: number[], arr2: number[]): number[] {
+//   return arr1.filter((value) => arr2.includes(value));
+// }
+// const result = findIntersection([1, 2, 3], [3, 2, 0]);
+// console.log(result);
 // function countOccurrences(obj: any, key: string): number {
 //   let count = 0;
 
