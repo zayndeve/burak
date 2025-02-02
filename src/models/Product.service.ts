@@ -32,7 +32,7 @@ class ProductService {
       match.productCollection = inquiry.productCollection;
 
     if (inquiry.search) {
-      match.productName = { $regex: new RegExp(inquiry.search, "i") };
+      match.productName = { $regex: new RegExp(inquiry.search, "i") }; // case sensitive
     }
     const sort: T =
       inquiry.order === "productPrice"
