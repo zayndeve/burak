@@ -1,11 +1,25 @@
-/!Task_T/;
-function sumEvens(numbers: number[]): number {
-  return numbers
-    .filter((num) => num % 2 === 0)
-    .reduce((sum, num) => sum + num, 0);
+/!Task_Z/;
+
+interface Person {
+  age: number;
 }
-console.log(sumEvens([4, 4]));
-console.log(sumEvens([1, 2, 3, 2]));
+
+function sortByAge(arr: Person[]): Person[] {
+  return arr.sort((a, b) => a.age - b.age);
+}
+
+const people: Person[] = [{ age: 23 }, { age: 21 }, { age: 13 }];
+console.log(sortByAge(people));
+// Natija: [{ age: 13 }, { age: 21 }, { age: 23 }]
+
+// /!Task_T/;
+// function sumEvens(numbers: number[]): number {
+//   return numbers
+//     .filter((num) => num % 2 === 0)
+//     .reduce((sum, num) => sum + num, 0);
+// }
+// console.log(sumEvens([4, 4]));
+// console.log(sumEvens([1, 2, 3, 2]));
 /* Task_Y */
 // function findIntersection(arr1: number[], arr2: number[]): number[] {
 //   return arr1.filter((value) => arr2.includes(value));
