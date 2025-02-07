@@ -1,15 +1,21 @@
-/!Task_Z/;
-
-interface Person {
-  age: number;
+/!Task_Y/;
+function celsiusToFahrenheit(celsius: number): number {
+  return (celsius * 9) / 5 + 32;
 }
+console.log(celsiusToFahrenheit(0));
+console.log(celsiusToFahrenheit(10));
+// /!Task_Z/;
 
-function sortByAge(arr: Person[]): Person[] {
-  return arr.sort((a, b) => a.age - b.age);
-}
+// interface Person {
+//   age: number;
+// }
 
-const people: Person[] = [{ age: 23 }, { age: 21 }, { age: 13 }];
-console.log(sortByAge(people));
+// function sortByAge(arr: Person[]): Person[] {
+//   return arr.sort((a, b) => a.age - b.age);
+// }
+
+// const people: Person[] = [{ age: 23 }, { age: 21 }, { age: 13 }];
+// console.log(sortByAge(people));
 // Natija: [{ age: 13 }, { age: 21 }, { age: 23 }]
 
 // /!Task_T/;
