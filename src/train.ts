@@ -1,9 +1,19 @@
-/!Task_Y/;
-function celsiusToFahrenheit(celsius: number): number {
-  return (celsius * 9) / 5 + 32;
+function changeNumberInArray(
+  firstNumber: number,
+  arr: number[],
+  thirdNumber: number
+): number[] {
+  if (firstNumber < 0 || firstNumber >= arr.length) {
+    throw new Error("Index array chegarasidan tashqarida.");
+  }
+
+  const updatedArray = [...arr];
+  updatedArray[firstNumber] = thirdNumber;
+
+  return updatedArray;
 }
-console.log(celsiusToFahrenheit(0));
-console.log(celsiusToFahrenheit(10));
+const result = changeNumberInArray(1, [1, 3, 7, 4], 2);
+console.log(result);
 // /!Task_Z/;
 
 // interface Person {
