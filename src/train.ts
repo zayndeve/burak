@@ -1,19 +1,43 @@
-function changeNumberInArray(
-  firstNumber: number,
-  arr: number[],
-  thirdNumber: number
-): number[] {
-  if (firstNumber < 0 || firstNumber >= arr.length) {
-    throw new Error("Index array chegarasidan tashqarida.");
+/!TASK_ZE!/;
+
+function removeDuplicate(str: string): string {
+  if (typeof str !== "string") {
+    throw new Error("Argument must be a string");
   }
 
-  const updatedArray = [...arr];
-  updatedArray[firstNumber] = thirdNumber;
+  const uniqueChars = new Set<string>();
+  let result = "";
 
-  return updatedArray;
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (!uniqueChars.has(char)) {
+      uniqueChars.add(char);
+      result += char;
+    }
+  }
+
+  return result;
 }
-const result = changeNumberInArray(1, [1, 3, 7, 4], 2);
-console.log(result);
+
+console.log(removeDuplicate("ttayyoqq"));
+
+/!TASK ZD!/;
+// function changeNumberInArray(
+//   firstNumber: number,
+//   arr: number[],
+//   thirdNumber: number
+// ): number[] {
+//   if (firstNumber < 0 || firstNumber >= arr.length) {
+//     throw new Error("Index array chegarasidan tashqarida.");
+//   }
+
+//   const updatedArray = [...arr];
+//   updatedArray[firstNumber] = thirdNumber;
+
+//   return updatedArray;
+// }
+// const result = changeNumberInArray(1, [1, 3, 7, 4], 2);
+// console.log(result);
 // /!Task_Z/;
 
 // interface Person {
