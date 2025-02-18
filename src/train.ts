@@ -1,27 +1,42 @@
-/!TASK_ZE!/;
-
-function removeDuplicate(str: string): string {
-  if (typeof str !== "string") {
-    throw new Error("Argument must be a string");
-  }
-
-  const uniqueChars = new Set<string>();
-  let result = "";
-
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (!uniqueChars.has(char)) {
-      uniqueChars.add(char);
-      result += char;
-    }
-  }
-
-  return result;
+/!TASK_ZF!/;
+function capitalizeWords(str: string): string {
+  return str
+    .split(" ")
+    .map((word) => {
+      if (word.length > 2) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      } else {
+        return word;
+      }
+    })
+    .join(" ");
 }
+const result = capitalizeWords("name should be a string");
+console.log(result);
 
-console.log(removeDuplicate("ttayyoqq"));
+// /!TASK_ZE!/;
+// function removeDuplicate(str: string): string {
+//   if (typeof str !== "string") {
+//     throw new Error("Argument must be a string");
+//   }
 
-/!TASK ZD!/;
+//   const uniqueChars = new Set<string>();
+//   let result = "";
+
+//   for (let i = 0; i < str.length; i++) {
+//     const char = str[i];
+//     if (!uniqueChars.has(char)) {
+//       uniqueChars.add(char);
+//       result += char;
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(removeDuplicate("ttayyoqq"));
+
+// /!TASK ZD!/;
 // function changeNumberInArray(
 //   firstNumber: number,
 //   arr: number[],
