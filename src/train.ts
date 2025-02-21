@@ -1,18 +1,31 @@
-/!TASK_ZF!/;
-function capitalizeWords(str: string): string {
-  return str
-    .split(" ")
-    .map((word) => {
-      if (word.length > 2) {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-      } else {
-        return word;
-      }
-    })
-    .join(" ");
+/!TASK_ZG!/;
+
+function convertToSnakeCase(str: string): string {
+  return (
+    str
+      ?.trim()
+      .toLowerCase()
+      .replace(/[^a-zA-Z0-9\s]/g, "")
+      .split(/\s+/)
+      .join("_") || ""
+  );
 }
-const result = capitalizeWords("name should be a string");
-console.log(result);
+console.log(convertToSnakeCase("name should be a string"));
+// /!TASK_ZF!/;
+// function capitalizeWords(str: string): string {
+//   return str
+//     .split(" ")
+//     .map((word) => {
+//       if (word.length > 2) {
+//         return word.charAt(0).toUpperCase() + word.slice(1);
+//       } else {
+//         return word;
+//       }
+//     })
+//     .join(" ");
+// }
+// const result = capitalizeWords("name should be a string");
+// console.log(result);
 
 // /!TASK_ZE!/;
 // function removeDuplicate(str: string): string {
