@@ -1,16 +1,28 @@
-/!TASK_ZG!/;
-
-function convertToSnakeCase(str: string): string {
-  return (
-    str
-      ?.trim()
-      .toLowerCase()
-      .replace(/[^a-zA-Z0-9\s]/g, "")
-      .split(/\s+/)
-      .join("_") || ""
-  );
+/!TASK_ZH!/;
+function findDissapearedNumbers(nums: number[]): number[] {
+  const result: number[] = [];
+  const set = new Set<number>(nums);
+  for (let i = 1; i <= nums.length; i++) {
+    if (!set.has(i)) {
+      result.push(i);
+    }
+  }
+  return result;
 }
-console.log(convertToSnakeCase("name should be a string"));
+console.log(findDissapearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
+// /!TASK_ZG!/;
+
+// function convertToSnakeCase(str: string): string {
+//   return (
+//     str
+//       ?.trim()
+//       .toLowerCase()
+//       .replace(/[^a-zA-Z0-9\s]/g, "")
+//       .split(/\s+/)
+//       .join("_") || ""
+//   );
+// }
+// console.log(convertToSnakeCase("name should be a string"));
 // /!TASK_ZF!/;
 // function capitalizeWords(str: string): string {
 //   return str
