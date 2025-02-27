@@ -1,15 +1,24 @@
-/!TASK_ZH!/;
-function findDissapearedNumbers(nums: number[]): number[] {
-  const result: number[] = [];
-  const set = new Set<number>(nums);
-  for (let i = 1; i <= nums.length; i++) {
-    if (!set.has(i)) {
-      result.push(i);
-    }
-  }
-  return result;
+/!TASK_ZI!/;
+
+function delaythenLog(message: string, delay: number): void {
+  setTimeout(() => {
+    console.log(message);
+  }, delay);
 }
-console.log(findDissapearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
+delaythenLog("this is delayed message ", 3000);
+
+// /!TASK_ZH!/;
+// function findDissapearedNumbers(nums: number[]): number[] {
+//   const result: number[] = [];
+//   const set = new Set<number>(nums);
+//   for (let i = 1; i <= nums.length; i++) {
+//     if (!set.has(i)) {
+//       result.push(i);
+//     }
+//   }
+//   return result;
+// }
+// console.log(findDissapearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
 // /!TASK_ZG!/;
 
 // function convertToSnakeCase(str: string): string {
