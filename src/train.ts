@@ -1,11 +1,20 @@
-/!TASK_ZI!/;
-
-function delaythenLog(message: string, delay: number): void {
-  setTimeout(() => {
-    console.log(message);
-  }, delay);
+/TASK_ZK/;
+function printNumbers(number: number, delay: number): void {
+  for (let i = 1; i <= number; i++) {
+    setTimeout(() => {
+      console.log(i);
+    }, i * delay);
+  }
 }
-delaythenLog("this is delayed message ", 3000);
+printNumbers(5, 1000);
+// /!TASK_ZI!/;
+
+// function delaythenLog(message: string, delay: number): void {
+//   setTimeout(() => {
+//     console.log(message);
+//   }, delay);
+// }
+// delaythenLog("this is delayed message ", 3000);
 
 // /!TASK_ZH!/;
 // function findDissapearedNumbers(nums: number[]): number[] {
