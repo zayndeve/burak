@@ -1,12 +1,17 @@
-/TASK_ZK/;
-function printNumbers(number: number, delay: number): void {
-  for (let i = 1; i <= number; i++) {
-    setTimeout(() => {
-      console.log(i);
-    }, i * delay);
-  }
+function reverseInteger(num: number): number {
+  return parseInt(num.toString().split("").reverse().join(""), 10);
 }
-printNumbers(5, 1000);
+console.log(reverseInteger(25478924655));
+
+// /TASK_ZK/;
+// function printNumbers(number: number, delay: number): void {
+//   for (let i = 1; i <= number; i++) {
+//     setTimeout(() => {
+//       console.log(i);
+//     }, i * delay);
+//   }
+// }
+// printNumbers(5, 1000);
 // /!TASK_ZI!/;
 
 // function delaythenLog(message: string, delay: number): void {
