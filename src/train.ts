@@ -1,7 +1,15 @@
-function reverseInteger(num: number): number {
-  return parseInt(num.toString().split("").reverse().join(""), 10);
+function rotateArray(arr: number[], index: number): number[] {
+  if (index < 0 || index >= arr.length) {
+    throw new Error("Index out of bounds");
+  }
+
+  return [...arr.slice(index), ...arr.slice(0, index)];
 }
-console.log(reverseInteger(25478924655));
+console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+// function reverseInteger(num: number): number {
+//   return parseInt(num.toString().split("").reverse().join(""), 10);
+// }
+// console.log(reverseInteger(25478924655));
 
 // /TASK_ZK/;
 // function printNumbers(number: number, delay: number): void {
