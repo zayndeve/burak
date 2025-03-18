@@ -1,11 +1,30 @@
-function rotateArray(arr: number[], index: number): number[] {
-  if (index < 0 || index >= arr.length) {
-    throw new Error("Index out of bounds");
+function areParenthesesBalanced(str: string): boolean {
+  let balance = 0;
+
+  for (const char of str) {
+    if (char === "(") {
+      balance++;
+    } else if (char === ")") {
+      balance--;
+    }
+
+    if (balance < 0) {
+      return false;
+    }
   }
 
-  return [...arr.slice(index), ...arr.slice(0, index)];
+  return balance === 0;
 }
-console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+console.log(areParenthesesBalanced("(test)()"));
+console.log(areParenthesesBalanced("(test("));
+// function rotateArray(arr: number[], index: number): number[] {
+//   if (index < 0 || index >= arr.length) {
+//     throw new Error("Index out of bounds");
+//   }
+
+//   return [...arr.slice(index), ...arr.slice(0, index)];
+// }
+// console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
 // function reverseInteger(num: number): number {
 //   return parseInt(num.toString().split("").reverse().join(""), 10);
 // }
