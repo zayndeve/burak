@@ -1,22 +1,47 @@
-function areParenthesesBalanced(str: string): boolean {
-  let balance = 0;
+function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+  const countElements = (arr: number[]) => {
+    return arr.reduce((acc, num) => {
+      acc[num] = (acc[num] || 0) + 1;
+      return acc;
+    }, {} as Record<number, number>);
+  };
 
-  for (const char of str) {
-    if (char === "(") {
-      balance++;
-    } else if (char === ")") {
-      balance--;
-    }
+  const count1 = countElements(arr1);
+  const count2 = countElements(arr2);
 
-    if (balance < 0) {
+  if (Object.keys(count1).length !== Object.keys(count2).length) {
+    return false;
+  }
+
+  for (const key in count1) {
+    if (count1[key] !== count2[key]) {
       return false;
     }
   }
 
-  return balance === 0;
+  return true;
 }
-console.log(areParenthesesBalanced("(test)()"));
-console.log(areParenthesesBalanced("(test("));
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
+console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
+// function areParenthesesBalanced(str: string): boolean {
+//   let balance = 0;
+
+//   for (const char of str) {
+//     if (char === "(") {
+//       balance++;
+//     } else if (char === ")") {
+//       balance--;
+//     }
+
+//     if (balance < 0) {
+//       return false;
+//     }
+//   }
+
+//   return balance === 0;
+// }
+// console.log(areParenthesesBalanced("(test)()"));
+// console.log(areParenthesesBalanced("(test("));
 // function rotateArray(arr: number[], index: number): number[] {
 //   if (index < 0 || index >= arr.length) {
 //     throw new Error("Index out of bounds");
