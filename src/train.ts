@@ -1,28 +1,42 @@
-function areArraysEqual(arr1: number[], arr2: number[]): boolean {
-  const countElements = (arr: number[]) => {
-    return arr.reduce((acc, num) => {
-      acc[num] = (acc[num] || 0) + 1;
-      return acc;
-    }, {} as Record<number, number>);
-  };
+function findDuplicates(arr: number[]): number[] {
+  const count: Record<number, number> = {};
+  const duplicates: Set<number> = new Set();
 
-  const count1 = countElements(arr1);
-  const count2 = countElements(arr2);
-
-  if (Object.keys(count1).length !== Object.keys(count2).length) {
-    return false;
-  }
-
-  for (const key in count1) {
-    if (count1[key] !== count2[key]) {
-      return false;
+  for (const num of arr) {
+    count[num] = (count[num] || 0) + 1;
+    if (count[num] > 1) {
+      duplicates.add(num);
     }
   }
 
-  return true;
+  return Array.from(duplicates);
 }
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
-console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
+console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
+// function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+//   const countElements = (arr: number[]) => {
+//     return arr.reduce((acc, num) => {
+//       acc[num] = (acc[num] || 0) + 1;
+//       return acc;
+//     }, {} as Record<number, number>);
+//   };
+
+//   const count1 = countElements(arr1);
+//   const count2 = countElements(arr2);
+
+//   if (Object.keys(count1).length !== Object.keys(count2).length) {
+//     return false;
+//   }
+
+//   for (const key in count1) {
+//     if (count1[key] !== count2[key]) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
+// console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
 // function areParenthesesBalanced(str: string): boolean {
 //   let balance = 0;
 
