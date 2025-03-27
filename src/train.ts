@@ -1,17 +1,41 @@
-function findDuplicates(arr: number[]): number[] {
-  const count: Record<number, number> = {};
-  const duplicates: Set<number> = new Set();
+function countNumberAndLetters(input: string): {
+  number: number;
+  letter: number;
+} {
+  let numberCount = 0;
+  let letterCount = 0;
 
-  for (const num of arr) {
-    count[num] = (count[num] || 0) + 1;
-    if (count[num] > 1) {
-      duplicates.add(num);
+  for (let char of input) {
+    if (/[0-9]/.test(char)) {
+      numberCount++;
+    } else if (/[a-zA-Z]/.test(char)) {
+      letterCount++;
     }
   }
 
-  return Array.from(duplicates);
+  return {
+    number: numberCount,
+    letter: letterCount,
+  };
 }
-console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
+
+// Misol:
+console.log(countNumberAndLetters("stringsdgvsd152q2w3q2%\\¥"));
+
+// function findDuplicates(arr: number[]): number[] {
+//   const count: Record<number, number> = {};
+//   const duplicates: Set<number> = new Set();
+
+//   for (const num of arr) {
+//     count[num] = (count[num] || 0) + 1;
+//     if (count[num] > 1) {
+//       duplicates.add(num);
+//     }
+//   }
+
+//   return Array.from(duplicates);
+// }
+// console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
 // function areArraysEqual(arr1: number[], arr2: number[]): boolean {
 //   const countElements = (arr: number[]) => {
 //     return arr.reduce((acc, num) => {
