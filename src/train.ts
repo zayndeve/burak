@@ -1,26 +1,42 @@
-function countNumberAndLetters(input: string): {
-  number: number;
-  letter: number;
-} {
-  let numberCount = 0;
-  let letterCount = 0;
+function singleNumber(nums: number[]): number {
+  const countMap = new Map<number, number>();
 
-  for (let char of input) {
-    if (/[0-9]/.test(char)) {
-      numberCount++;
-    } else if (/[a-zA-Z]/.test(char)) {
-      letterCount++;
+  for (const num of nums) {
+    countMap.set(num, (countMap.get(num) || 0) + 1);
+  }
+
+  for (const [num, count] of countMap) {
+    if (count === 1) {
+      return num;
     }
   }
 
-  return {
-    number: numberCount,
-    letter: letterCount,
-  };
+  throw new Error("No unique number found");
 }
+console.log(singleNumber([2, 1, 2, 1, 3]));
+// function countNumberAndLetters(input: string): {
+//   number: number;
+//   letter: number;
+// } {
+//   let numberCount = 0;
+//   let letterCount = 0;
 
-// Misol:
-console.log(countNumberAndLetters("stringsdgvsd152q2w3q2%\\¥"));
+//   for (let char of input) {
+//     if (/[0-9]/.test(char)) {
+//       numberCount++;
+//     } else if (/[a-zA-Z]/.test(char)) {
+//       letterCount++;
+//     }
+//   }
+
+//   return {
+//     number: numberCount,
+//     letter: letterCount,
+//   };
+// }
+
+// // Misol:
+// console.log(countNumberAndLetters("stringsdgvsd152q2w3q2%\\¥"));
 
 // function findDuplicates(arr: number[]): number[] {
 //   const count: Record<number, number> = {};
