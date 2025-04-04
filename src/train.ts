@@ -1,19 +1,37 @@
-function singleNumber(nums: number[]): number {
-  const countMap = new Map<number, number>();
+function firstUniqueCharIndex(str: string): number {
+  const charCount: Record<string, number> = {};
 
-  for (const num of nums) {
-    countMap.set(num, (countMap.get(num) || 0) + 1);
+  for (const char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
   }
 
-  for (const [num, count] of countMap) {
-    if (count === 1) {
-      return num;
+  for (let i = 0; i < str.length; i++) {
+    if (charCount[str[i]] === 1) {
+      return i;
     }
   }
 
-  throw new Error("No unique number found");
+  return -1;
 }
-console.log(singleNumber([2, 1, 2, 1, 3]));
+console.log(firstUniqueCharIndex("stamp"));
+console.log(firstUniqueCharIndex("success"));
+console.log(firstUniqueCharIndex("aabbcc"));
+// function singleNumber(nums: number[]): number {
+//   const countMap = new Map<number, number>();
+
+//   for (const num of nums) {
+//     countMap.set(num, (countMap.get(num) || 0) + 1);
+//   }
+
+//   for (const [num, count] of countMap) {
+//     if (count === 1) {
+//       return num;
+//     }
+//   }
+
+//   throw new Error("No unique number found");
+// }
+// console.log(singleNumber([2, 1, 2, 1, 3]));
 // function countNumberAndLetters(input: string): {
 //   number: number;
 //   letter: number;
