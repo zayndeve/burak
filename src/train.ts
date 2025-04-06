@@ -1,21 +1,40 @@
-function firstUniqueCharIndex(str: string): number {
-  const charCount: Record<string, number> = {};
+function sumOfUnique(arr: number[]): number {
+  const frequencyMap: Record<number, number> = {};
 
-  for (const char of str) {
-    charCount[char] = (charCount[char] || 0) + 1;
+  for (const num of arr) {
+    frequencyMap[num] = (frequencyMap[num] || 0) + 1;
   }
 
-  for (let i = 0; i < str.length; i++) {
-    if (charCount[str[i]] === 1) {
-      return i;
+  let sum = 0;
+  for (const num in frequencyMap) {
+    if (frequencyMap[num] === 1) {
+      sum += Number(num);
     }
   }
 
-  return -1;
+  return sum;
 }
-console.log(firstUniqueCharIndex("stamp"));
-console.log(firstUniqueCharIndex("success"));
-console.log(firstUniqueCharIndex("aabbcc"));
+
+console.log(sumOfUnique([1, 2, 3, 2])); // Natija: 4
+
+// function firstUniqueCharIndex(str: string): number {
+//   const charCount: Record<string, number> = {};
+
+//   for (const char of str) {
+//     charCount[char] = (charCount[char] || 0) + 1;
+//   }
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (charCount[str[i]] === 1) {
+//       return i;
+//     }
+//   }
+
+//   return -1;
+// }
+// console.log(firstUniqueCharIndex("stamp"));
+// console.log(firstUniqueCharIndex("success"));
+// console.log(firstUniqueCharIndex("aabbcc"));
 // function singleNumber(nums: number[]): number {
 //   const countMap = new Map<number, number>();
 
